@@ -359,7 +359,8 @@ select {
   .accordion__item:target h1 {
     position: static;
     font-size: 2em;
-    text-indent: 0;
+    text-indent: 0.5em;
+    margin: 0;
     color: #333;
     transform: skew(10deg);
     -webkit-transform: skew(10deg);
@@ -428,7 +429,6 @@ footer {
 }
 
 .footer__content {
-  text-align: center;
   color: #363636;
 }
 
@@ -442,17 +442,18 @@ footer {
   font-size: 14px;
 }
 
-.footer__listOfIcons {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
-  row-gap: 1em;
-  column-gap: 2em;
+.footer__content > p,
+.footer__content > h1 {
+  max-width: 395px;
+  margin: 0 auto;
+  text-align: center;
 }
 
-.footer__listOfIcons > li {
-  padding: 0 15px;
+.footer__listOfIcons {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  place-items: center;
+  gap: 2em;
 }
 
 .footer__listOfIcons > li > img {
@@ -503,11 +504,17 @@ footer {
 
   .footer__content h1,
   .footer__content p {
-    max-width: 395px;
-    margin: auto;
+    text-align: start;
+    margin: 0;
+  }
+  .footer__content h1 {
+    font-size: 3em;
   }
 
   .footer__link {
+    max-width: 395px;
+    margin: 40px auto 20px auto;
+    justify-content: start;
     float: left;
     width: 40%;
   }
